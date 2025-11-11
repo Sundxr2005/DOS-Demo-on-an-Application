@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ABC Bank — Secure PortaL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo-box">MDB</div>
+      <div>
+        <div class="brand-title"> ABC Bank</div>
+        <div class="brand-sub">Customer Portal<span class="demo-badge"></span></div>
+      </div>
+    </div>
+    <nav class="nav">
+      <button id="loginBtn" class="btn small">Login</button>
+    </nav>
+  </div>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h3>Accounts</h3>
+      <ul>
+        <li class="acct active">Checking •••• 1234 <span class="bal">₹ 12,450.75</span></li>
+        <li class="acct">Savings •••• 9876 <span class="bal">₹ 54,000.00</span></li>
+        <li class="acct">Credit Card •••• 4321 <span class="bal">₹ -4,320.50</span></li>
+      </ul>
+      <div class="quick">
+        <button class="btn">Transfer</button>
+        <button class="btn">Statements</button>
+      </div>
+    </aside>
+
+    <section class="content">
+      <header class="content-header">
+        <h2>Account overview</h2>
+        <div class="last-login">Last access: <span id="lastAccess">—</span></div>
+      </header>
+
+      <div class="cards">
+        <div class="card">
+          <h4>Total balance</h4>
+          <div class="big">₹ 62,130.25</div>
+        </div>
+        <div class="card">
+          <h4>Recent payments</h4>
+          <ul class="mini-list">
+            <li>Electricity ₹1,850 — 2 days ago</li>
+            <li>Grocery ₹2,320 — 3 days ago</li>
+            <li>Mobile Recharge ₹299 — 5 days ago</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Security notice</h4>
+          <p class="muted">This is a local demo site used for network testing and performance demonstrations. Do not enter real credentials.</p>
+        </div>
+      </div>
+
+      <section class="tx-section">
+        <h3>Quick transfer</h3>
+        <form id="transferForm" class="transfer">
+          <label>To (Account)</label>
+          <input type="text" name="to" placeholder="xxxx-xxxx-xxxx" required/>
+          <label>Amount (₹)</label>
+          <input type="number" name="amount" min="1" placeholder="1000" required/>
+          <div class="row">
+            <button type="submit" class="btn">Submit</button>
+            <button id="clearBtn" type="button" class="btn ghost">Clear</button>
+          </div>
+          <p class="muted small"></p>
+        </form>
+      </section>
+
+      <section class="log-section">
+        <h3>Server ping / Status</h3>
+        <div class="ping-area">
+          <button id="pingBtn" class="btn">Ping Server</button>
+          <div id="pingResult" class="pingResult">Status: idle</div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="sitefoot">
+    <small>MyDemo Bank — Local lab demo. Not affiliated with any real bank. All data is fictitious.</small>
+  </footer>
+
+  <!-- Login modal -->
+  <div id="loginModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <h3>Login</h3>
+      <form id="loginForm">
+        <label>Username</label>
+        <input id="user" placeholder="demo.user"/>
+        <label>Password</label>
+        <input id="pass" type="password" placeholder="********"/>
+        <div class="row">
+          <button class="btn" type="submit">Sign in</button>
+          <button id="closeModal" type="button" class="btn ghost">Close</button>
+        </div>
+        <p class="muted small">This form does not send data anywhere. It's for UI only.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
